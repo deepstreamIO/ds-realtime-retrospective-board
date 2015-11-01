@@ -1,0 +1,15 @@
+{
+  "name": "realtime-retrospective-board-server",
+  "version": "1.0.0",
+  "description": "Powers the realtime retrospective board tutorial",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/hoxton-one/realtime-retrospective-board",
+  "author": "Wolfram Hempel<wolfram.hempel@hoxton-one.com>",
+  "license": "MIT",
+  "dependencies": {
+  	"deepstream.io": "latest"
+  }
+}

@@ -1,0 +1,106 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background-image: url('../img/white-board-background.jpg');
+	background-size: cover;
+	 -webkit-user-select: none;
+}
+
+/** LOGIN **/
+.login{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	background-color: rgba( 255, 255, 255, 0.8 );
+}
+
+.login *{
+	font: 12px Arial, sans-serif;
+}
+
+.login-error{
+	color: #c7254e;
+	background-color: #f9f2f4;
+	padding: 5px;
+	border: 1px solid #c7254e;
+	margin-bottom: 8px;
+	display: none;
+}
+
+.login form{
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #ccc;
+	width: 300px;
+	margin: 200px auto;
+	overflow: hidden;
+}
+
+.login form input[type=text],
+.login form input[type=password]{
+	width: 100%;
+	border: 1px solid #ddd;
+	box-shadow: inset 1px 1px 4px rgba( 0, 0, 0, 0.1 );
+	padding: 5px;
+	margin-bottom: 8px;
+	display: block;
+}
+
+.login form input[type=submit]{
+	border: none;
+	background: #666;
+	color: #fff;
+	padding: 5px 10px;
+	float: right;
+	cursor: pointer;
+}
+
+.login form input[type=submit]:hover{
+	background: #888;
+}
+/** Video Chat **/
+.video-chat{
+	background-color: #000;
+	overflow: hidden;
+	height: 120px;
+}
+
+.video-chat video{
+	width: 160px;
+	height: 120px;
+	float: left;
+	border-right: 1px solid #ccc;
+}
+
+/** Header **/
+.header {
+	color: white;
+	height: 35px;
+	background-color: #ccc;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.7);
+	position: relative;
+}
+
+.header h1 {
+	font-size: 18px;
+	padding: 5px;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.header .add-postits {
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #111;
+}
+
+.header .add-postits .postit{
+	position: static;
+	cursor: pointer;
+}

@@ -1,0 +1,119 @@
+/**
+ * Postit
+ */
+
+.postit-header {
+    position: absolute;
+    width: 100%
+}
+.postit-copy {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    height: 125px;
+    outline: none;
+    border: none;
+    resize: none;
+}
+.postit-inner:after {
+    content: "";
+    height: 55%;
+    position: absolute;
+    width: 50%;
+    z-index: -2;
+    transform: skew(-8deg) rotate(-6deg);
+    bottom: 16px;
+    left: 10px;
+    box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.postit-inner {
+    line-height: 60px;
+    height: 80px;
+    width: 90px;
+}
+
+/**
+ * Large Postit
+ */
+.large-postit{
+    position: absolute !important;
+}
+.large-postit .postit-header {
+    height: 30px;
+}
+.large-postit .postit-inner {
+    min-height: 200px;
+    min-width: 200px;
+    padding: 45px 20px 10px;
+    border-radius: 0 0 0 200px/0 0 0 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.large-postit .postit-copy {
+    font-size: 25px;
+    font-family: 'Reenie Beanie', cursive;
+}
+
+/**
+ * Small Postit
+ */
+.small-postit {
+    display: inline-block;
+    transform: rotate(3deg);
+}
+.small-postit .postit-inner {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+    padding: 12px 10px 5px;
+    border-radius: 0 0 0 200px/0 0 0 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+/**
+ * Colors
+ */
+[data-type="sad"] .postit-inner {
+    background-image: -webkit-linear-gradient(top, #b0e1ec 15%, #baebf6 20%, #baebf6 33%);
+}
+[data-type="happy"] .postit-inner {
+    background-image: -webkit-linear-gradient(top, #f5e38c 15%, #ffed96 20%, #ffed96 33%);
+}
+[data-type="mad"] .postit-inner {
+    background-image: -webkit-linear-gradient(top, #e6a7a8 15%, #f0b1b2 20%, #f0b1b2 33%);
+}
+
+/**
+ * Devices
+ */
+@media (min-width: 801px) {
+    .postit {
+        margin: 20px;
+    }
+    .postit-header {
+        cursor: grab;
+        cursor: -webkit-grab;
+    }
+    .large-postit {
+        width: 200px;
+    }
+    .small-postit {
+        margin: 10px;
+    }
+}
+@media (max-width: 800px) {
+    .large-postit {
+        display: block;
+        margin: 20px auto;
+        width: 75%;
+    }
+    .large-postit .postit-inner {
+        width: 100%;
+    }
+    .large-postit .postit-inner:after {
+        bottom: 30px;
+    }
+    .small-postit {
+        max-width: 29%;
+        margin: -20px 5px 10px 5px;
+        cursor: pointer;
+    }
+}
