@@ -4,11 +4,12 @@ function VideoChat( ds, username ) {
 	this.outerElement = $( '.video-chat' );
 	this.localStream = null;
 
-	navigator.getUserMedia(
-		{ video: { width: 160, height: 120 }, audio: true },
-		this.onLocalStream.bind( this ),
-		this.onError.bind( this )
-	);
+	navigator.mediaDevices.getUserMedia({
+		video: { width: 160, height: 120 },
+		audio: false
+	})
+	.then( this.onLocalStream.bind( this ) )
+	.catch( this.onError.bind( this ) );
 }
 
 VideoChat.prototype.onIncomingCall = function( call, metaData ) {
@@ -46,14 +47,15 @@ VideoChat.prototype.bindCallEvents = function( call, username ) {
 };
 
 VideoChat.prototype.addVideo = function( username, stream, muted ) {
-	this.outerElement.append( $( '<video></video>' ).attr({
+	var video = $( '<video></video>' ).attr({
 		'width': '160px',
 		'height': '120px',
 		'autoplay': 'autoplay',
 		'muted': muted,
-		'data-username': username, 
-		'src': URL.createObjectURL( stream )
-	}) );
+		'data-username': username
+	});
+	video[0].srcObject = stream;
+	this.outerElement.append( video );
 };
 
 VideoChat.prototype.removeVideo = function( username ) {
