@@ -1,33 +1,33 @@
 var template = 
-	'<div class="postit large-postit">' +
-	  '<div class="postit-header">' +
+	'<div class="stickynote large-stickynote">' +
+	  '<div class="stickynote-header">' +
 	  '</div>' +
-	  '<div class="postit-inner">' +
-	    '<textarea class="postit-copy"></textarea>' +
+	  '<div class="stickynote-inner">' +
+	    '<textarea class="stickynote-copy"></textarea>' +
 	  '</div>' +
 	'</div>';
 
-function Postit( ds, recordID, parentElement ) {
+function StickyNote( ds, recordID, parentElement ) {
 	this.ds = ds;
 	this.record = this.ds.record.getRecord( recordID );
 	this.parentElement = parentElement;
 	this.element = $( template );
 
-	this.textArea = this.element.find( '.postit-copy' );
+	this.textArea = this.element.find( '.stickynote-copy' );
 	this.record.whenReady( this.initialise.bind( this ) );
 }
 
-Postit.prototype.initialise = function() {
+StickyNote.prototype.initialise = function() {
 
 	// Set the type to sad, mad or glad
 	this.element.attr( 'data-type', this.record.get( 'type' ) );
 	
-	// Subscribe to incoming changes to the postit-text
+	// Subscribe to incoming changes to the stickynote-text
 	this.record.subscribe( 'content', function( value ) {
 		this.textArea.val( value );
 	}.bind( this ), true );
 
-	// Store and propagate changes to the postit-text made by this user
+	// Store and propagate changes to the stickynote-text made by this user
 	this.textArea.keyup( function() {
 		this.record.set( 'content', this.textArea.val() );
 	}.bind( this ) );
@@ -39,7 +39,7 @@ Postit.prototype.initialise = function() {
 
 	// Make this record draggable using jQuery UI
 	this.element.draggable({
-		handle: ".postit-header",
+		handle: ".stickynote-header",
 		zIndex: 999,
 		// Prevent jQuery draggable from updating the DOM position and
 		// leave it to the record instead

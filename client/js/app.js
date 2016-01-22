@@ -11,7 +11,7 @@ $(function(){
 	
 		ds.login( authData, function( success, errorEvent, errorMessage ) {
 			if( success ) {
-				new PostitBoard( ds );
+				new StickyNoteBoard( ds );
 				new VideoChat( ds, authData.username );
 				$( '.login' ).hide();
 			} else {

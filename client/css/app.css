@@ -93,14 +93,14 @@ body {
 	font-family: 'Permanent Marker', cursive;
 }
 
-.header .add-postits {
+.header .add-stickynotes {
 	position: absolute;
 	right: 0;
 	top: 0;
 	color: #111;
 }
 
-.header .add-postits .postit{
+.header .add-stickynotes .stickynote{
 	position: static;
 	cursor: pointer;
 }

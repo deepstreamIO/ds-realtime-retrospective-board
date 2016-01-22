@@ -38,7 +38,7 @@ VideoChat.prototype.onLocalStream = function( localStream ) {
 };
 
 VideoChat.prototype.onError = function( error ) {
-	alert( error );
+	alert( error.name || error );
 };
 
 VideoChat.prototype.bindCallEvents = function( call, username ) {
