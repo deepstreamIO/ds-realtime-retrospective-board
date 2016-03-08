@@ -10,5 +10,5 @@
 
 ## Run client
 ```
-1. Open index.html in browser
+1. Open client/index.html in browser
 ```
