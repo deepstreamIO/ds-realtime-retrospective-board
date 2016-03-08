@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/hoxton-one/realtime-retrospective-board",
-  "author": "Wolfram Hempel<wolfram.hempel@hoxton-one.com>",
+  "repository": "https://github.com/deepstreamIO/realtime-retrospective-board",
+  "author": "Wolfram Hempel<wolfram.hempel@deepstreamhub.com>",
   "license": "MIT",
   "dependencies": {
   	"deepstream.io": "latest"
