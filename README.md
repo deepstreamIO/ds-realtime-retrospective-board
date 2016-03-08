@@ -11,4 +11,5 @@
 ## Run client
 ```
 1. Open client/index.html in browser
+2. Login with any username and the password 'sesame'
 ```
