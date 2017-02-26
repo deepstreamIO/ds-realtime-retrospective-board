@@ -5,6 +5,7 @@ tutorialServer.set( 'host', 'localhost' );
 tutorialServer.set( 'port', 6020 );
 
 tutorialServer.set( 'permissionHandler', {
+	isReady: true,
 	isValidUser: function( connectionData, authData, callback ) {
 		// We don't care what the username is, as long as one is specified
 		if( !authData.username ) {
